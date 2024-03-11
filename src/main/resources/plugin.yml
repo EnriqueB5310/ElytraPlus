@@ -1,0 +1,4 @@
+name: ElytraPlus
+version: '${project.version}'
+main: org.barrios.elytraplus.ElytraPlus
+api-version: '1.20'
