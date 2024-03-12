@@ -16,7 +16,7 @@ public class FlightEvents implements Listener {
     public void flyOverFire(EntityToggleGlideEvent e) {
 
 // if player flies over fire while looking up
-        if (e.isGliding() && (e.getEntity() instanceof Player p)) {
+        if (e.isGliding() && e.getEntity() instanceof Player p) {
             while (p.getLocation().getPitch() == -90 && p.getLocation().subtract(0,-5,0).getBlock().getType()  == Material.FIRE) {
             p.setVelocity(p.getVelocity().multiply(2));
             } ;
