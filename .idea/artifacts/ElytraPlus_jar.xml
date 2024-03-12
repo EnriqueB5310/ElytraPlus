@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="ElytraPlus:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/ElytraPlus_jar</output-path>
+    <root id="archive" name="ElytraPlus.jar">
+      <element id="module-output" name="ElytraPlus" />
+    </root>
+  </artifact>
+</component>

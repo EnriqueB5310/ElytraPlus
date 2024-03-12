@@ -6,9 +6,11 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityToggleGlideEvent;
+import org.bukkit.event.player.PlayerMoveEvent;
+import org.bukkit.event.player.PlayerToggleSneakEvent;
 
 //Player gets velocity if looking up flying over fire source
-public class HotAirListener implements Listener {
+public class FlightEvents implements Listener {
 
     @EventHandler
     public void flyOverFire(EntityToggleGlideEvent e) {
@@ -22,6 +24,24 @@ public class HotAirListener implements Listener {
         }
 
     }
+
+
+    /*
+    @EventHandler
+    public void ElytraHover(PlayerToggleSneakEvent e) {
+        Player p = e.getPlayer();
+
+       while (p.isSneaking() && p.getInventory().getChestplate().getType() != null && p.getInventory().getChestplate().getType() == Material.ELYTRA) {
+
+           //whatever gives slow falling
+
+        }
+
+
+
+    } */
+
+
 }
 
 
