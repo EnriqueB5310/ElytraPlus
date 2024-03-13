@@ -1,6 +1,8 @@
 package org.barrios.elytraplus.Util;
+import org.bukkit.Color;
 import org.bukkit.Effect;
 import org.bukkit.Location;
+import org.bukkit.Particle;
 import org.bukkit.util.Vector;
 
 import java.util.ArrayList;
@@ -49,7 +51,7 @@ public class ParticleRect {
         for(ParticlePoint point : sides){
             for(Vector position : traverse(point.origin,point.direction)){
                 position = start.toVector().clone().add(position);
-                start.getWorld().playEffect(position.toLocation(start.getWorld()), Effect.ELECTRIC_SPARK, 0);
+                start.getWorld().spawnParticle(Particle.REDSTONE,position.toLocation(start.getWorld()), 4,new Particle.DustOptions(Color.RED, 5));
             }
         }
     }
