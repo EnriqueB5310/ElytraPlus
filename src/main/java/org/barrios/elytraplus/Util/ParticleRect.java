@@ -7,8 +7,8 @@ import java.util.ArrayList;
 
 public class ParticleRect {
 
-    ArrayList<ParticlePoint> sides = new ArrayList<ParticlePoint>();
-    Location start;
+    static ArrayList<ParticlePoint> sides = new ArrayList<ParticlePoint>();
+    static Location start;
 
     public ParticleRect(Location start, double width, double length, double height){
         this.start = start;
@@ -33,11 +33,11 @@ public class ParticleRect {
         sides.add(new ParticlePoint(G,D));
     }
 
-    public Vector getPostion(double blocksAway,Vector origin, Vector direction) {
+    public static Vector getPostion(double blocksAway, Vector origin, Vector direction) {
         return origin.clone().add(direction.clone().normalize().multiply(blocksAway));
     }
 
-    public ArrayList<Vector> traverse(Vector origin, Vector direction) {
+    public static ArrayList<Vector> traverse(Vector origin, Vector direction) {
         ArrayList<Vector> positions = new ArrayList<>();
         for (double d = 0; d <= direction.length(); d += 0.1) {
             positions.add(getPostion(d,origin,direction));
@@ -45,7 +45,7 @@ public class ParticleRect {
         return positions;
     }
 
-    public void draw(){
+    public static void draw(){
         for(ParticlePoint point : sides){
             for(Vector position : traverse(point.origin,point.direction)){
                 position = start.toVector().clone().add(position);
