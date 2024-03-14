@@ -15,16 +15,13 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.scheduler.BukkitTask;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 
 
 public class Booster implements Listener {
 
-    List<Integer> taskID = new ArrayList<Integer>(); //TODO make a linked list
 
+    LinkedList<Integer> taskID = new LinkedList<Integer>();
     Plugin plugin = ElytraPlus.getPlugin(ElytraPlus.class);
 
     @EventHandler
@@ -36,7 +33,7 @@ public class Booster implements Listener {
             System.out.println("Test");
 
             int task = render.getTaskId();
-           taskID.add(task);
+           taskID.addFirst(task);
 
             }
 
@@ -49,7 +46,11 @@ public class Booster implements Listener {
 
         if (e.getBlock().getType().equals(Material.LAPIS_ORE)) {
 
-            Bukkit.getScheduler().cancelTask(taskID.get(0));
+            Bukkit.getScheduler().cancelTask(taskID.getFirst());
+
+            System.out.println("Particle Cube" + taskID.getFirst() + " Removed");
+            taskID.remove();
+
 
 
         }
