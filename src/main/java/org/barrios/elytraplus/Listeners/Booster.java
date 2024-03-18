@@ -45,6 +45,8 @@ public class Booster implements Listener {
         //todo make if statement that if blocks broken cube vanishes (stop task)
     }
 
+
+    @EventHandler
     public void deleteBooster(BlockBreakEvent e) {
 
         if (e.getBlock().getType().equals(Material.LAPIS_ORE)) {
