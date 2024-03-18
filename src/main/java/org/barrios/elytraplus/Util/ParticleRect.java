@@ -41,7 +41,7 @@ public class ParticleRect {
 
     public static ArrayList<Vector> traverse(Vector origin, Vector direction) {
         ArrayList<Vector> positions = new ArrayList<>();
-        for (double d = 0; d <= direction.length(); d += 0.1) {
+        for (double d = 0; d <= direction.length(); d += 0.5) {
             positions.add(getPostion(d,origin,direction));
         }
         return positions;
@@ -51,7 +51,7 @@ public class ParticleRect {
         for(ParticlePoint point : sides){
             for(Vector position : traverse(point.origin,point.direction)){
                 position = start.toVector().clone().add(position);
-                start.getWorld().spawnParticle(Particle.REDSTONE,position.toLocation(start.getWorld()), 1,new Particle.DustOptions(Color.RED, 1));
+                start.getWorld().spawnParticle(Particle.REDSTONE,position.toLocation(start.getWorld()), 4,new Particle.DustOptions(Color.RED, 1));
             }
         }
     }
