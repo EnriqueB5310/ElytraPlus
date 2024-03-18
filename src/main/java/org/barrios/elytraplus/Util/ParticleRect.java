@@ -51,7 +51,7 @@ public class ParticleRect {
         for(ParticlePoint point : sides){
             for(Vector position : traverse(point.origin,point.direction)){
                 position = start.toVector().clone().add(position);
-                start.getWorld().spawnParticle(Particle.REDSTONE,position.toLocation(start.getWorld()), 4,new Particle.DustOptions(Color.RED, 2));
+                start.getWorld().spawnParticle(Particle.REDSTONE,position.toLocation(start.getWorld()), 4,new Particle.DustOptions(Color.RED, 1));
             }
         }
     }
