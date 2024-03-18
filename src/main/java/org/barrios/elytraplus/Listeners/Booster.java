@@ -31,7 +31,7 @@ public class Booster implements Listener {
     public void CreateBooster(BlockIgniteEvent e) {
         if (e.getCause() == BlockIgniteEvent.IgniteCause.FLINT_AND_STEEL && e.getBlock().getRelative(0,-1,0).getType().equals(Material.LAPIS_ORE)) {
 
-                  BukkitRunnable render = new RenderParticles(new ParticleRect(e.getBlock().getRelative(2,3,2).getLocation(),5,5,3));
+                  BukkitRunnable render = new RenderParticles(new ParticleRect(e.getBlock().getRelative(-2,3,-2).getLocation(),5,5,3));
                   render.runTaskTimer(plugin,0,1);
             System.out.println("Test");
 
